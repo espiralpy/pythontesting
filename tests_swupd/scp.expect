@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+
+
+#spawn scp quick-swupd.t indicators@10.219.106.21:/home/indicators/Desktop
+spawn scp quick-swupd.t swupd@10.219.106.192:/home/swupd/TaaS
+
+
+expect "Are you sure you want to continue connecting (yes/no)?" {send "yes\r"}
+expect "password" {send "knc@123\r"}
+
+interact
+

@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+set host [lindex $argv 0]
+
+spawn scp $host swupd@10.219.106.192:/var/taas/resources/recovery_files
+
+expect "Are you sure you want to continue connecting" {send "yes\r"}
+expect "password" {send "knc@123\r"}
+
+interact
+
